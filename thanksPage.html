@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تم تسجيل طلبك بنجاح | عسل كيناشي الأصلي Kennashi</title>
+  <meta name="description"
+    content="تم تسجيل طلبك بنجاح لمنتج عسل كيناشي الأصلي (Kennashi). سيقوم ممثل خدمة العملاء بالتواصل معك قريباً لتأكيد الطلب." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#84B854" />
+
+  <link rel="shortcut icon" href="images/mark.png" type="image/x-icon" />
+
+
+  <!-- كود البيكسل اللي هيتمسح حطه تحت السطر ده   -->
+
+
+
+
+
+
+
+
+
+
+  <template id="pixel-container">
+    <!-- 
+           حط كود البيكسل هنا      تحت الكومنت(Script tags & Noscript tags)
+          مثال لتيك توك أو فيسبوك:  <script> ... </script>-->
+
+
+
+
+
+
+
+
+
+
+
+  </template>
+
+  <style>
+    @font-face {
+      font-family: mainFont;
+      src: local("mainFont"), url("css/mainFont.ttf");
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      direction: rtl;
+    }
+
+    body,
+    html {
+      font-family: mainFont, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .div_btn {
+      text-align: center;
+    }
+
+    .div_btn .btn {
+      font-family: mainFont, sans-serif;
+      font-size: 24px;
+      padding: 1px 38px 5px;
+      line-height: 1.5;
+      color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px #5858586b;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .div_btn .btn span {
+      color: #d5d5d5;
+    }
+
+    /* Start Thanks Page Section */
+    body.thanks_page_page {
+      background: url(images/thanks.webp) center/cover;
+      min-height: 100vh;
+    }
+
+    .thanks_page {
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .thanks_page h3 {
+      font-size: 30px;
+      color: #fcfefe;
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .thanks_page p {
+      font-size: 14px;
+      color: #fcfefe;
+      margin: 0 auto 15px;
+      text-align: center;
+    }
+
+    .thanks_page .text {
+      position: relative;
+      width: max-content;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+
+    .thanks_page .div_btn {
+      margin-top: 35px;
+    }
+
+    .thanks_page .div_btn a {
+      color: #000;
+      background: linear-gradient(00deg, #e4cc16, #F8E025);
+    }
+
+    .thanks_page .text .img_check {
+      width: 100px;
+      text-align: center;
+      margin: 0 auto 15px;
+    }
+
+    /* ==========  Responsive Design  ========== */
+    @media (min-width: 600px) {
+      body.thanks_page_page {
+        background: #313131;
+        min-height: 100vh;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .thanks_page p {
+        font-size: 18px;
+        margin-bottom: 25px;
+      }
+
+      .thanks_page h3 {
+        font-size: 25px;
+        margin: 0px auto 8px;
+      }
+
+      .thanks_page .text img {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body class="thanks_page_page">
+  <div class="thanks_page">
+    <div class="text">
+      <img class="img_check" src="images/mark.png" alt="تم تسجيل طلب عسل كيناشي الأصلي بنجاح" />
+      <h3>تم تسجيل طلب   <br> المنــــتج بــنـــجـاح</h3>
+      <p>سيقوم احد ممثلي خدمة  <br> العمـلاء بالـتـواصـل مـعــك</p>
+    </div>
+    <div class="div_btn">
+      <a href="index.html" class="btn">الرجوع للموقع</a>
+    </div>
+  </div>
+
+  <!-- كود تفعيل حاوية البيكسل المشروط -->
+  <script>
+    (function () {
+      "use strict";
+      try {
+        var auth = sessionStorage.getItem("wg_px_auth");
+        // مسح التصريح فوراً لمنع التكرار نهائياً عند عمل Refresh للصفحة
+        sessionStorage.removeItem("wg_px_auth");
+
+        if (!auth) return;
+
+        var parts = auth.split(".");
+        if (parts.length !== 2) return;
+
+        var ts = parseInt(parts[0], 10);
+        var now = Math.floor(Date.now() / 1000);
+
+        // التحقق من صلاحية التصريح الزمنية (أقل من دقيقتين) وطول التوقيع
+        if (!ts || Math.abs(now - ts) > 120 || parts[1].length !== 64) {
+          return;
+        }
+
+        var tmpl = document.getElementById("pixel-container");
+        if (!tmpl) return;
+
+        var content = tmpl.innerHTML;
+        if (!content || !content.trim()) return;
+
+        var tempDiv = document.createElement("div");
+        tempDiv.style.display = "none";
+        tempDiv.innerHTML = content;
+
+        var scripts = tempDiv.getElementsByTagName("script");
+        var scriptsArr = Array.prototype.slice.call(scripts);
+
+        scriptsArr.forEach(function (oldScript) {
+          var newScript = document.createElement("script");
+          for (var i = 0; i < oldScript.attributes.length; i++) {
+            newScript.setAttribute(
+              oldScript.attributes[i].name,
+              oldScript.attributes[i].value
+            );
+          }
+          newScript.text = oldScript.innerHTML;
+          document.head.appendChild(newScript);
+          oldScript.parentNode.removeChild(oldScript);
+        });
+
+        if (tempDiv.childNodes.length > 0) {
+          document.body.appendChild(tempDiv);
+        }
+      } catch (e) {
+        console.error("Pixel activation error:", e);
+      }
+    })();
+  </script>
+</body>
+
+</html>
